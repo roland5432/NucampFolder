@@ -1,0 +1,64 @@
+body {
+    background-image: url("/images/baconeggs.jpg");
+    background-color: #ffffff80;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+h1 {
+    color: blueviolet;
+    font: 32px Garamond, Helvetica, serif;
+}
+
+table {
+    width: 50%;
+}
+
+thead {
+    text-align: left;
+}
+
+label {
+    display: block;
+}
+
+#submit-btn {
+    display: block;
+    background-color: palegreen;
+}
+
+.menu {
+    border-color: aqua;
+    border-style: solid;
+    border-width: 5px;
+    padding: 10px;
+    margin: 10px;
+    font: 25px Arial bold;
+    font-family: Arial, Helvetica, Sans-serif ;
+    font-style: normal;
+    color: blue;
+}
+
+.reviews {
+    border-color:black;
+    border-style: dotted;
+    border-width: 10px;
+    padding: 10px;
+    margin: 10px;
+    font: 15px Times New Roman;
+    font-family: Arial, Helvetica, Sans-serif;
+    font-style: italic;
+    background-color: red;
+}
+
+
+.contactinfo {
+    border-color: red;
+    border-style: dashed;
+    border-width: 20px;
+    padding: 10px;
+    margin: 10px;
+    font: 20px Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    background-color: orangered;
+}

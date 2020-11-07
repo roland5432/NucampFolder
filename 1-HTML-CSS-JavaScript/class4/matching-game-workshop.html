@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Game</title>
+
+    <style>
+        img {
+            position: absolute;
+            }
+        div {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            }
+        #rightSide {
+            left: 500px;
+            border-left: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Matching Game</h1>
+    <button onclick="generateFaces()">Start Game</button>
+    <p>Click on the extra smiling face on the left.<br>
+    Wins = <span id="wins">0</span>, Losses = <span id="loss">0</span>
+    <br>How many faces do you want?:
+        <input id="numFace" type="number" value="1" style="width:40px">
+    </p>
+    <main id="x">
+        <div id="leftSide"></div>
+        <div id="rightSide"></div>
+    </main>
+    <script>
+        let numberOfFaces; // = 5;
+        let numFace;
+        let newStart = true;
+        const theLeftSide = document.getElementById("leftSide");
+        const theRightSide = document.getElementById("rightSide");
+        let wins = 0;
+        let loss = 0;
+
+        function generateFaces(){
+            if(newStart == true){
+                numberOfFaces = document.getElementById("numFace").value;
+                numFace = document.getElementById("numFace").value;
+            }
+            for(i=1; i <= numberOfFaces; i++ ){
+                let randomTop = Math.floor(Math.random() * 400);
+                let randomLeft = Math.floor(Math.random() * 400);
+                const face = document.createElement("img");
+                face.src = "../images/halloween.png";
+                face.style.top = randomTop + "px";
+                face.style.left = randomLeft + "px";
+                theLeftSide.appendChild(face);
+            }
+
+            const leftSideImages = theLeftSide.cloneNode(true);
+            leftSideImages.removeChild(leftSideImages.lastChild);
+            theRightSide.appendChild(leftSideImages);
+            theLeftSide.lastChild.addEventListener('click', nextLevel);
+            document.getElementById("x").addEventListener('click', gameOver);
+
+            function nextLevel(event){
+                event.stopPropagation();
+                while(theLeftSide.firstChild){
+                    theLeftSide.removeChild(theLeftSide.firstChild);
+                }
+                theRightSide.innerHTML = "";
+                //numberOfFaces += 5;
+                numberOfFaces = Number(numberOfFaces) + NUmber(numFace);
+                newStart = false;
+                generateFaces();
+                wins = wins + 1;
+                document.getElementById("wins").innerHTML = wins;
+              
+            }
+
+            function gameOver() {
+                alert("You're a loser, go away.");
+                document.getElementById("x").removeEventListener('click', gameOver);
+                theLeftSide.lastChild.removeEventListener('click', nextLevel);
+                while(theLeftSide.firstChild){
+                    theLeftSide.removeChild(theLeftSide.firstChild);
+                }
+                theRightSide.innerHTML = "";
+                //numberOfFaces = 5;
+                numberOfFaces = document.getElementById("numface").value;
+                newStart = true;
+                loss = loss + 1;
+                document.getElementById("loss").innerHTML = loss;
+             
+            }
+        }
+    </script>
+</body>
+</html>

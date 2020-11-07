@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS Practice: CSS Corner Cafe</title>
+    <link rel="stylesheet" href="css/practice-styles.css">
+</head>
+<body>
+    <h1>CSS Corner Cafe</h1>
+    <section class="menu">
+        <h2>Menu</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Coffee</td>
+                    <td>$2</td>
+                </tr>
+                <tr>
+                    <td>Tea</td>
+                    <td>$1.50</td>
+                </tr>
+                <tr>
+                    <td>Chicken & Waffles</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Blueberry Pancakes</td>
+                    <td>$6</td>
+                </tr>
+                <tr>
+                    <td>Bacon and Eggs</td>
+                    <td>$5</td>
+                </tr>
+                <tr>
+                    <td>Hash and Eggs</td>
+                    <td>$6</td>
+                </tr>
+                <tr>
+                    <td>Egg Sandwich w/ meat of choice: Bacon or Sausage</td>
+                    <td>$5</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="reviews">
+        <h2>Submit Your Review and Favorite Meal</h2>
+        <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name - not required"/><br><br>
+            <label for="rating">Your Rating:</label>
+            1 <input type="range" id="rating" name="rating" min="1" max="5" /> 5 <br><br>
+            <label for="menureview">Your Feedback about the Corner Cafe Menu:</label>
+            <textarea id="menureview" name="menureview" rows="4" cols="50">
+            </textarea><br><br>
+
+            <fieldset>
+                <legend>Check Your Favorite Menu Item:</legend> 
+                <div>
+                    <input type="radio" id="coffee" name="menu" value="coffee" checked="checked"/> 
+                    <label for="Coffee">Coffee</label><br>
+                    <input type="radio" id="tea" name="menu" value="tea" />
+                    <label for="tea">Tea</label><br>
+                    <input type="radio" id="Chicken&Waffles" name="menu" value="Chicken&Waffles" />
+                    <label for="Chicken&Waffles">Chicken & Waffles</label><br>
+                    <input type="radio" id="BlueberryPancakes" name="menu" value="BlueberryPancakes" /> 
+                    <label for="BlueberryPancakes">Blueberry Pancakes</label><br>
+                    <input type="radio" id="BaconandEggs" name="menu" value="BaconandEggs" />
+                    <label for="BaconandEggs">Bacon and Eggs</label><br>
+                    <input type="radio" id="HashandEggs" name="menu" value="HashandEggs" />
+                    <label for="HashandEggs">Hash and Eggs</label><br>
+                    <input type="radio" id="EggSandwich" name="menu" value="EggSandwich" />
+                    <label for="EggSandwich">Egg Sandwich</label><br>
+                </div>  
+            </fieldset>
+
+            <input type="submit" id="submit-btn" />
+        </form>
+    </section>
+    <section class="contactinfo">
+        <h2>Contact</h2>
+        <p>Call us at: <a href="tel:+15555551212">1-555-555-1212</a></p>
+        <address>
+            CSS Corner Cafe<br />
+            101 W Main St<br />
+            Bellevue, WA 98004
+        </address>
+    </section> <br><br><br><br><br><br><br>
+</body>
+</html>

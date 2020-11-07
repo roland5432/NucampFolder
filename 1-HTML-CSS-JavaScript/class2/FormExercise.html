@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Exercise</title>
+</head>
+
+<body>
+        <form action="" method="" enctype="multipart/form-data"> <!-- sction needs URL, method needs get or post enctype is needed for file upload-->
+            <div> Enter your information:
+                <br>
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" placeholder="First Name" required/> <!-- name is required, single word, tells server what the data is, placeholder is text inside input box-->
+                <input type="submit" value="Go" />
+            </div>
+            
+            <div>
+                Checklist <input type="checkbox" name="Item1" value="Item1">
+            </div>
+
+            <div>
+                Pay by Cash <input type="radio" name="payment" value="cash" required />
+                Pay by Check <input type="radio" name="payment" value="check" />
+            </div>
+
+            <div>
+                My Rating <input type="range" name="myrating" min="1" max="10" />
+            </div>
+
+            <div>
+                Choose a color <input type="color" name="mycolor" />
+            </div>
+
+            <div>
+                Upload your file: <input type="file" name="myfile" /> 
+            </div>
+
+            <div>
+                <fieldset> <!-- Fieldset is used to group sets of form controls together -->
+                    <legend>Your Information</legend> <!-- Legend is used to set a caption at the top of a fieldset -->
+                    <input type="text" name="firstname" placeholder="Your First Name" required />
+                    <input type="text" name="lastname" placeholder="Your Last Name" required />
+                </fieldset>
+            </div>
+
+            <div>
+                <!-- Textarea is used to allow multiline inputs-->
+                <textarea name="feedback" id="" cols="30" rows="10" placeholder="Your feedback here">
+                </textarea>
+            </div>
+
+            <div>
+                <select name="flavor" id="chosenflavor" >
+                    <option value="mint">Mint</option>
+                    <option value="chocolatechip">Chocolate Chip</option>
+                    <option value="phishFood">Phish Food</option>
+                </select>
+            </div>
+
+    </form>
+</body>
+</html>
+
+<!---->
