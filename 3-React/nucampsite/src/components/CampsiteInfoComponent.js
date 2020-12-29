@@ -21,29 +21,31 @@ class CampsiteInfo extends Component {
         if (comments) {
             return (
                 <div className="col-md-5 m-1">
-                    <h4>Comments.</h4>
+                    <h4>Comments</h4>
                     {
                         comments.map(comment => {
                             return (
-                                <div>
-                                    <p>{comment.text}</p>
-                                    <p>--{comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p>
+                                <div key={comment.id}>
+                                    <p className="comment">{comment.text}</p>
+                                    <p className="author">--{comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p>
                                 </div>
                             )
                         })
                     }
                 </div>
             )
-        }<div />
+        } return <div />;
     }
 
     render() {
         if (this.props.selectedCampsite) {
             console.log(this.props.selectedCampsite);
             return (
-                <div className="row">
-                    {this.renderCampsite(this.props.selectedCampsite)}
-                    {this.renderComments(this.props.selectedCampsite.comments)}
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampsite(this.props.selectedCampsite)}
+                        {this.renderComments(this.props.selectedCampsite.comments)}
+                    </div>
                 </div>
             );
         } else {
